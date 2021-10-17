@@ -26,7 +26,6 @@ namespace Ebay_Price_updater
         static void Main(string[] args)
         {
             Token = Select_A_Token();
-            return;
             Console.WriteLine("1. Create new database\n2. Update using database\n   Please enter a number: ");
             var key = Console.ReadKey();
             Console.WriteLine();
