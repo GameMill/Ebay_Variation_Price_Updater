@@ -42,3 +42,4 @@ so if you select "small, red" on ebay your price will be
 5 | from small  
 10 | from red  
 4+5+10 = 19  
+19 is the price on ebay
