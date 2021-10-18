@@ -17,7 +17,7 @@ Update Variation Price on a listing on ebay
 4. update the prices for each Variation in the {EbayItemNumber}.txt file
 5. rerun the program and select option 2 to update the Variations on ebay
 
-example Variation file
+example Variation file  
 the ALL will add to all Variations
 ````
 {
