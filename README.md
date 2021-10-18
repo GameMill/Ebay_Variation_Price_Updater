@@ -40,5 +40,5 @@ the ALL will add to all Variations
 so if you select "small, red" on ebay your price will be  
 2+2=4 | from the ALL  
 5 | from small  
-10 | from red
+10 | from red  
 4+5+10 = 19  
