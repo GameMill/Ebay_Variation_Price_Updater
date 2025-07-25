@@ -1,29 +1,53 @@
-# Ebay Variation Price Updater
-Update Variation Price on a listing on ebay
 
-1. Build the project
-2. Create your database file at the root with the Ebay_Price_manager.exe. file name is data.db
-```` 
-{
-  "Tokens": {
-    "Add your ebay username": "your ebay api token"
-  },
-  "DevID": "your ebay api devid",
-  "CertID": "your ebay api certid",
-  "AppID": "your ebay api appid"
-}
-````
-3. run Ebay_Price_manager.exe and select 1 to download the Variations for an ebay item number. this will create a file {EbayItemNumber}.txt at the root of your program
-4. update the prices for each Variation in the {EbayItemNumber}.txt file
-5. rerun the program and select option 2 to update the Variations on ebay
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/license/mit)
+[![release](https://img.shields.io/github/v/release/GameMill/WinPE_OS_Installer)](https://github.com/GameMill/Ebay_Variation_Price_Updater/releases)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](https://github.com/GameMill/Ebay_Variation_Price_Updater/pulls)
 
-example Variation file  
-the ALL will add to all Variations
-````
+## 📦 Setup Instructions
+
+1. **Build the project**  
+   Compile the project using your preferred build system.
+
+2. **Create the database file**  
+   Place a file named `data.db` in the root directory alongside `Ebay_Price_manager.exe`.
+
+3. **Add your API credentials**  
+   Create a JSON config file (`config.json`) with this structure and save it next to `data.db`:
+
+   ```json
+   {
+     "Tokens": {
+       "YourEbayUsername": "YourEbayAPIToken"
+     },
+     "DevID": "YourEbayDevID",
+     "CertID": "YourEbayCertID",
+     "AppID": "YourEbayAppID"
+   }
+   ```
+
+---
+
+## 🚀 Usage Instructions
+
+1. **Download item variations**  
+   Run `Ebay_Price_manager.exe` and select option **1**.  
+   This generates `{EbayItemNumber}.txt` in the root folder.
+
+2. **Edit the variation prices**  
+   Open `{EbayItemNumber}.txt` and adjust the price values for each variation.
+
+3. **Push updates to eBay**  
+   Rerun `Ebay_Price_manager.exe`, choose option **2**, and confirm to submit your changes.
+
+---
+
+## 📝 Example Variation File
+
+```json
 {
   "ALL": {
     "addtoall": 2,
-    "addtoall2": 2,
+    "addtoall2": 2
   },
   "size": {
     "small": 5,
@@ -36,10 +60,26 @@ the ALL will add to all Variations
     "green": 15
   }
 }
-````
-so if you select "small, red" on ebay your price will be  
-2+2=4 | from the ALL  
-5 | from small  
-10 | from red  
-4+5+10 = 19  
-19 is the price on ebay
+```
+
+---
+
+## 💡 Price Calculation Example
+
+If a buyer selects **small** and **red**, the price is computed as:
+
+| Source         | Adjustment |
+| -------------- | ---------- |
+| `ALL`          | 2 + 2 = 4  |
+| `size: small`  | 5          |
+| `color: red`   | 10         |
+| **Total Price**| **£19**    |
+
+---
+
+## 🧩 Notes
+
+- Variation dimensions can include any eBay-supported attribute (e.g., size, color, material).  
+- Values under `ALL` are summed and applied to every variation.  
+- Ensure the JSON files are well-formed to avoid runtime errors.  
+- Test on a mock item before pushing updates to live listings.
